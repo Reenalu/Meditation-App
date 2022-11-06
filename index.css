@@ -9,7 +9,7 @@
 body {
   min-width: 100vw;
   height: 100vh;
-  background-image: url(/images/Wallpaper_Mobile.jpg);
+  background-image: url(./images/Wallpaper_Mobile.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -163,7 +163,7 @@ p {
 
 @media screen and (min-width: 600px) {
   body {
-    background-image: url(/images/Wallpaper.jpg);
+    background-image: url(./images/Wallpaper.jpg);
     background: cover;
   }
 
