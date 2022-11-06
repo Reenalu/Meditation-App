@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*MAIN OUTLINE*/
+
+body {
+  min-width: 100vw;
+  height: 100vh;
+  background-image: url(/images/Wallpaper_Mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.app {
+  display: grid;
+  grid-template-areas:
+    "s"
+    "p"
+    "p"
+    "t";
+  width: 100vw;
+  height: 100vh;
+}
+
+picture {
+  position: fixed;
+  width: 100vw;
+  top: 0%;
+  left: 0%;
+  z-index: -10;
+  filter: brightness(50%);
+}
+
+/*Time Container*/
+
+.time-container {
+  display: flex;
+  grid-area: t;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.time-container button {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  width: 30%;
+  font-size: 10px;
+  padding: 10px;
+  transition: ease 1s;
+  box-shadow: 2px 2px 10px black;
+}
+
+.time-container button:hover {
+  background: whitesmoke;
+}
+
+/*Player Container*/
+
+.player-container {
+  grid-area: p;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+}
+
+.player-container svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  pointer-events: none;
+}
+
+.clock-display {
+  position: absolute;
+  color: white;
+  bottom: -10%;
+  font-size: 25px;
+}
+
+.play {
+  width: 50px;
+  cursor: pointer;
+}
+
+/*Sound/Picture Select Container*/
+
+.sound-container {
+  display: flex;
+  grid-area: s;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.card {
+  height: 150px;
+  box-shadow: 5px 5px 20px black;
+  overflow: hidden;
+  margin: 3px;
+}
+
+.card img {
+  height: 150px;
+  width: 100px;
+  border-radius: 3px;
+}
+
+.intro {
+  height: 20px;
+  width: 100px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  position: absolute;
+  background: rgb(27, 27, 27, 0.5);
+  color: white;
+  bottom: 75px;
+}
+
+h1 {
+  font-size: 15px;
+  color: whitesmoke;
+  text-align: center;
+}
+
+p {
+  font-size: 10px;
+  margin: 5px;
+  color: whitesmoke;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.card:hover .intro {
+  transition: 1.5s;
+  height: 100px;
+  visibility: visible;
+  opacity: 1;
+  bottom: 60px;
+}
+
+.card:hover p {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*Media Queries*/
+
+@media screen and (min-width: 600px) {
+  body {
+    background-image: url(/images/Wallpaper.jpg);
+    background: cover;
+  }
+
+  .app {
+    display: grid;
+    grid-template-areas:
+      "t p p s"
+      "t p p s"
+      "t p p s"
+      "t p p s";
+    width: 100vw;
+    height: 100vh;
+  }
+
+  /*Background*/
+
+  picture {
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+  }
+
+  /*Time Container*/
+
+  .time-container {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .time-container button {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  /*Player Container*/
+
+  .player-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .player-container svg {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+  }
+  .player-container circle {
+    r: 120px;
+    cx: 150px;
+    cy: 150px;
+  }
+
+  .clock-display {
+    bottom: 20%;
+    color: white;
+    font-size: 40px;
+  }
+
+  .play {
+    width: 75px;
+    cursor: pointer;
+  }
+  /*Sound/Picture Select Container*/
+
+  .sound-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card {
+    box-shadow: 5px 5px 20px black;
+    margin: 5px;
+    position: relative;
+  }
+
+  .card img {
+    width: 150px;
+    height: 200px;
+  }
+
+  .intro {
+    bottom: -20px;
+    position: absolute;
+  }
+
+  h1 {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  p {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .card:hover {
+    cursor: pointer;
+  }
+
+  .card:hover .intro {
+    width: 100px;
+    height: 75px;
+  }
+
+  .card:hover p {
+    opacity: 1;
+    visibility: visible;
+  }
+}
