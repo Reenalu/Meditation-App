@@ -49,10 +49,10 @@ const app = () => {
     const checkPlaying = song => {
         if (song.paused) {
             song.play();
-            play.src = '/icons/pause.svg';
+            play.src = './icons/pause.svg';
         } else {
             song.pause();
-            play.src = '/icons/play.svg';
+            play.src = './icons/play.svg';
         }
     }
 
